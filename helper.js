@@ -13,3 +13,11 @@ module.exports.collectData = (request, callback) => {
         callback(data);
     });
 };
+
+module.exports.runAction = (request, response, action) => {
+    if (action) {
+        action(request, response);
+    } else {
+        helper.sendResponse(response, "Not Found", 404);
+    }
+};

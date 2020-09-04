@@ -16,10 +16,5 @@ const actions = {
 
 module.exports = (request, response) => {
     const action = actions[request.method];
-
-    if (action) {
-        action(request, response);
-    } else {
-        helper.sendResponse(response, "Not Found", 404);
-    }
+    helper.runAction(request, response, action);
 };
