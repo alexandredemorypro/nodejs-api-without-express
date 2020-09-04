@@ -5,7 +5,7 @@ module.exports.sendResponse = (response, data, statusCode, headers) => {
 };
 
 module.exports.collectData = (request, callback) => {
-    var data = '';
+    let data = '';
     request.on('data', (chunk) => {
         data += chunk;
     });

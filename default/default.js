@@ -1,7 +1,7 @@
 'use strict';
 const helper = require('../helper.js');
 
-var actions = {
+const actions = {
     'GET': (request, response) => {
         helper.sendResponse(response, 'Hello World', 200, { 'Content-Type': 'text/plain' });
     },
@@ -15,7 +15,7 @@ var actions = {
 };
 
 module.exports = (request, response) => {
-    var action = actions[request.method];
+    const action = actions[request.method];
 
     if (action) {
         action(request, response);
